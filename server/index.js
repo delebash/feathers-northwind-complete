@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
-const logger = require('winston');
-const app = require('./app');
-const port = app.get('port');
-const server = app.listen(port);
 const squelizeService = require('feathers-sequelize');
 const models = require('./models');
-const middleware = require('./middleware');
+const expressServerMiddlewhere = require('./middleware');
+const app = require('./app');
+const host = app.get('host');
+const port = app.get('port');
+const server = app.listen(port);
+
 
 app.use('/customers', squelizeService({
   Model: models.customers,
@@ -15,14 +16,14 @@ app.use('/customers', squelizeService({
   }
 }));
 
-
 // Configure must be after routes or error 404 not found due to error hanlder order matters in .use and .configure
-//app.configure(middleware)
+app.configure(expressServerMiddlewhere);
 
-process.on('unhandledRejection', (reason, p) =>
-  logger.error('Unhandled Rejection at: Promise ', p, reason)
-);
+
+//npm start ./server/index.js is not working correctly
 
 server.on('listening', () =>
-  logger.info(`Feathers application started on ${app.get('host')}:${port}`)
+ console.log(`Feathers application started on ${host}:${port}`)
+
 );
+

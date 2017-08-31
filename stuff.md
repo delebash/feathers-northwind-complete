@@ -19,3 +19,10 @@ Services are what happens after you hit an endoint.
 
 Location is the enpoint you define. app.use(location,service)  So in this case you could define it as
 app.use('customers',MyService).  So when you navigate to http://localhost/customers you run MyService and in the case of of or neDB adapter we link it to the customers table.
+
+Error
+
+WARNING: No configurations found in configuration directory:D:\Development\FeathersJs\feathers-northwind-complete\config
+WARNING: To disable this warning set SUPPRESS_NO_CONFIG_WARNING in the environmen
+
+Change directory to server or run npm start with correct directory

@@ -1,7 +1,7 @@
-const feathers = require('../node_modules/feathers-client');
-const io = require('../node_modules/socket.io-client');
+const feathers = require('feathers-client');
+const io = require('socket.io-client');
 const Realtime = require('feathers-offline-realtime');
-
+const snapshot = require('feathers-offline-snapshot');
 const step1 = require('./1-third-party');
 const step2 = require('./2-reconnect');
 

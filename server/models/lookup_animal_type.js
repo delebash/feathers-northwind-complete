@@ -1,18 +1,18 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('privileges', {
+  return sequelize.define('lookup_animal_type', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    privilege_name: {
-      type: DataTypes.STRING(50),
+    type: {
+      type: DataTypes.STRING(45),
       allowNull: true
     }
   }, {
-    tableName: 'privileges'
+    tableName: 'lookup_animal_type'
   });
 };

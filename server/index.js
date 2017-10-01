@@ -1,3 +1,4 @@
+
 /* eslint-disable no-console */
 const squelizeService = require('feathers-sequelize');
 const models = require('./models');
@@ -8,36 +9,51 @@ const port = app.get('port');
 const server = app.listen(port);
 
 
-app.use('/customers', squelizeService({
-  Model: models.customers,
+app.use('/animal', squelizeService({
+  Model: models.animal,
   paginate: {
     default: 2,
     max: 4
   }
 }));
 
-app.use('/employees', squelizeService({
-  Model: models.employees,
-  paginate: {
-    default: 2,
-    max: 4
-  }
-}));
-app.use('/products', squelizeService({
-  Model: models.products,
+
+app.use('/lookup_animal_category', squelizeService({
+  Model: models.lookup_animal_category,
   paginate: {
     default: 2,
     max: 4
   }
 }));
 
-app.use('/suppliers', squelizeService({
-  Model: models.suppliers,
+
+app.use('/lookup_animal_type', squelizeService({
+  Model: models.lookup_animal_type,
   paginate: {
     default: 2,
     max: 4
   }
 }));
+
+
+app.use('/lookup_sex', squelizeService({
+  Model: models.lookup_sex,
+  paginate: {
+    default: 2,
+    max: 4
+  }
+}));
+
+
+app.use('/lookup_species', squelizeService({
+  Model: models.lookup_species,
+  paginate: {
+    default: 2,
+    max: 4
+  }
+}));
+
+
 // Configure must be after routes or error 404 not found due to error hanlder order matters in .use and .configure
 app.configure(expressServerMiddlewhere);
 
@@ -49,4 +65,3 @@ server.on('listening', () =>
  console.log(`Feathers application started on ${host}:${port}`)
 
 );
-

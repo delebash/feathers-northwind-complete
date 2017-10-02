@@ -45,8 +45,8 @@ app.use('/lookup_sex', squelizeService({
 }));
 
 
-app.use('/lookup_species', squelizeService({
-  Model: models.lookup_species,
+app.use('/lookup_specie', squelizeService({
+  Model: models.lookup_specie,
   paginate: {
     default: 2,
     max: 4

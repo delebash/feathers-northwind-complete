@@ -1,8 +1,9 @@
+ 
 {
   "development": {
     "username": "root",
     "password": "test12345",
-    "database": "northwind",
+    "database": "arksoft",
     "host": "127.0.0.1",
     "port": "3306",
     "dialect": "mysql",
@@ -30,3 +31,5 @@
     "dialect": "mysql"
   }
 }
+
+

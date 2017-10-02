@@ -19,6 +19,8 @@ Create models from db
     sequelize-auto -o "./models" -d northwind -h localhost -u root -p 3306 -x test12345
 
 
+**make sure you create an index.js in the models folder after running sequelize**
+
 
 make all models available to import
 
